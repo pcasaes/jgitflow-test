@@ -4,7 +4,7 @@
 
     <groupId>org.pcasaes</groupId>
     <artifactId>jgitflowtest</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.1.1</version>
 
     <properties>
         <version.jgitflow.plugin>1.0.0-rc-1</version.jgitflow.plugin>
