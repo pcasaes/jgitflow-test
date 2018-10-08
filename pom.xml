@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.pcasaes</groupId>
+    <artifactId>jgitflowtest</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <version.jgitflow.plugin>1.0.0-rc-1</version.jgitflow.plugin>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>io.ultreia.java4all.jgitflow</groupId>
+                    <artifactId>jgitflow-maven-plugin</artifactId>
+                    <version>${version.jgitflow.plugin}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>io.ultreia.java4all.jgitflow</groupId>
+                <artifactId>jgitflow-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Enable this to push to origin using SSH keys -->
+                    <enableSshAgent>true</enableSshAgent>
+                    <!-- Pushing in-development features to origin allows all devs to see what each other are working on -->
+                    <pushFeatures>true</pushFeatures>
+                    <!--
+                      This allows the CI server (e.g. Jenkins) to automatically push new releases to
+                      origin; you can then either manually deploy them or, if you are doing Continuous
+                      Deployments, auto-deploy them to prod
+                    -->
+                    <pushReleases>true</pushReleases>
+                    <!-- Hot Fixes should be pushed to origin as well so that any dev can pick them up -->
+                    <pushHotfixes>true</pushHotfixes>
+                    <!-- Prevents deployments from dev workstations so that they can be done by a CI server -->
+                    <noDeploy>true</noDeploy>
+                    <!-- Whether to turn off merging changes from the feature branch to develop -->
+                    <noFeatureMerge>true</noFeatureMerge>
+                    <!-- Whether to use NO_FF as the merge strategy -->
+                    <suppressFastForward>true</suppressFastForward>
+                    <!-- Whether to allow SNAPSHOT dependencies. Default is to fail when finding any SNAPSHOT. -->
+                    <allowSnapshots>true</allowSnapshots>
+                    <!-- Whether to push feature branches to the remote upstream. -->
+                    <pushFeatures>true</pushFeatures>
+                    <!-- Whether to automatically assign submodules the parent version. If set to false, the user will be prompted for the version of each submodules. -->
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <flowInitContext>
+                        <versionTagPrefix>zwift_1.0-prod-</versionTagPrefix>
+                    </flowInitContext>
+                    <noTag>true</noTag>
+                    <consistentProjectVersions>true</consistentProjectVersions>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
