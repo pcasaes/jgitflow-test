@@ -5,9 +5,14 @@
     <parent>
         <artifactId>jgitflowtest</artifactId>
         <groupId>org.pcasaes</groupId>
-        <version>1.4.1</version>
+        <version>1.5.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
 
     <artifactId>modulea</artifactId>
 

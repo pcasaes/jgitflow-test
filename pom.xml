@@ -5,13 +5,14 @@
     <groupId>org.pcasaes</groupId>
     <artifactId>jgitflowtest</artifactId>
     <packaging>pom</packaging>
-    <version>1.4.1</version>
+    <version>1.5.0</version>
     <modules>
         <module>modulea</module>
     </modules>
 
     <properties>
-        <version.jgitflow.plugin>1.0.0-rc-1</version.jgitflow.plugin>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
 
     <build>
